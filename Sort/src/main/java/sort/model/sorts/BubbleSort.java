@@ -13,7 +13,6 @@ public class BubbleSort implements Sort {
         int n = toSort.length;
         int temp = 0;
         int operations = 2;
-
         for (int i = 0; i < n; i++) {
             for (int j = 1; j < (n - i); j++) {
                 if (toSort[j - 1] > toSort[j]) {
@@ -22,7 +21,6 @@ public class BubbleSort implements Sort {
                     toSort[j] = temp;
                     operations += 4;
                 }
-
             }
         }
         return operations;

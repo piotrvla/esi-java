@@ -46,4 +46,9 @@ public class Controller implements Observer {
         System.out.println(configurationChoice.getValue());
     }
 
+    @Override
+    public void update(String note) {
+        //to do
+    }
+
 }

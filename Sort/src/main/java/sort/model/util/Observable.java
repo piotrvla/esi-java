@@ -6,4 +6,9 @@ package sort.model.util;
  */
 public interface Observable {
 
+    public void notifyObs(String note);
+
+    public void subscribe(Observer obs);
+
+    public void unsubscribe(Observer obs);
 }
