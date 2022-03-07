@@ -6,6 +6,6 @@ package sort.model.sorts;
  */
 public interface Sort {
     
-    public int runSort(int[] toSort);
+    public long runSort(int[] toSort);
     
 }

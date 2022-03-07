@@ -9,17 +9,20 @@ import java.util.List;
 public class BubbleSort implements Sort {
 
     @Override
-    public int runSort(int[] toSort) {
+    public long runSort(int[] toSort) {
         int n = toSort.length;
-        int temp = 0;
-        int operations = 2;
-        for (int i = 0; i < n; i++) {
-            for (int j = 1; j < (n - i); j++) {
-                if (toSort[j - 1] > toSort[j]) {
-                    temp = toSort[j - 1];
-                    toSort[j - 1] = toSort[j];
-                    toSort[j] = temp;
-                    operations += 4;
+        long operations = 3;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (toSort[j] > toSort[j + 1]) {
+                    operations += 1;
+                    // swap arr[j+1] and arr[j]
+                    int temp = toSort[j];
+                    operations += 1;
+                    toSort[j] = toSort[j + 1];
+                    operations += 1;
+                    toSort[j + 1] = temp;
+                    operations += 1;
                 }
             }
         }
