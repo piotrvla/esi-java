@@ -97,6 +97,7 @@ public class Controller implements Observer {
         sorting.subscribe(this);
         sorting.runSorting();
         leftStatus.setText("Thread actif:" + Thread.activeCount());
+        progressBar.setProgress(0.1);
 
     }
 
@@ -116,6 +117,9 @@ public class Controller implements Observer {
                 merge.getData().add(new XYChart.Data<>(sortData.getSize(), sortData.getOperations()));
 
             }
+            double progress = progressBar.getProgress() + 0.1;
+            progressBar.setProgress(progress);
+            rightStatus.setText("Dernière exécution : " + sortData.getTime() + "ms");
         });
     }
 }
