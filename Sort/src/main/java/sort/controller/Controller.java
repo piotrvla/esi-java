@@ -51,7 +51,7 @@ public class Controller implements Observer {
     TableView<SortData> table;
     @FXML
     MenuItem quitItem;
-
+ 
     private XYChart.Series<Integer, Long> bubble;
     private XYChart.Series<Integer, Long> merge;
 
