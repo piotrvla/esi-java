@@ -1,16 +1,15 @@
 package g56212.atlg4.mentoring.repository;
 
-import java.io.IOException;
 import java.util.List;
 
-public interface Dao<T>{
-    void insert(T item) throws IOException;
+public interface Dao<T,K>{
+    void insert(T item) throws RepositoryException;
 
-    void delete(T item) throws IOException;
+    void delete(K key) throws RepositoryException;
 
-    void update(T item) throws IOException;
+    void update(T item) throws RepositoryException;
 
-    T get(T item) throws IOException;
+    T get(K key) throws RepositoryException;
 
-    List<T> getAll() throws IOException;
+    List<T> getAll() throws RepositoryException;
 }

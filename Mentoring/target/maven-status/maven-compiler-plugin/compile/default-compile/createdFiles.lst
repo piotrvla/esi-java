@@ -1,0 +1,11 @@
+g56212\atlg4\mentoring\config\ConfigManager.class
+g56212\atlg4\mentoring\repository\StudentRepository.class
+g56212\atlg4\mentoring\dto\Dto.class
+g56212\atlg4\mentoring\Mentoring.class
+g56212\atlg4\mentoring\repository\StudentDao.class
+g56212\atlg4\mentoring\config\ConfigManager$ConfigManagerHolder.class
+g56212\atlg4\mentoring\repository\RepositoryException.class
+g56212\atlg4\mentoring\dto\StudentDto.class
+g56212\atlg4\mentoring\repository\Repository.class
+g56212\atlg4\mentoring\repository\Dao.class
+g56212\atlg4\mentoring\repository\StudentDao$StudentDaoHolder.class

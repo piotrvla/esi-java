@@ -1,19 +1,19 @@
 package g56212.atlg4.mentoring.repository;
 
 import g56212.atlg4.mentoring.dto.StudentDto;
-import java.io.IOException;
 import java.util.List;
 
-public class StudentRepository implements Repository<StudentDto> {
-    private Dao<StudentDto> dao;
+public class StudentRepository implements Repository<Integer, StudentDto> {
+
+    private final StudentDao dao;
 
     public StudentRepository() {
-        this.dao = StudentDao.getInstance();
+        dao = StudentDao.getInstance();
     }
 
     @Override
-    public void add(StudentDto item) throws IOException {
-        if (contains(item)) {
+    public void add(StudentDto item) throws RepositoryException {
+        if (contains(item.getKey())) {
             dao.update(item);
         } else {
             dao.insert(item);
@@ -21,25 +21,25 @@ public class StudentRepository implements Repository<StudentDto> {
     }
 
     @Override
-    public void remove(StudentDto item) throws IOException {
-        if (contains(item)) {
-            dao.delete(item);
+    public void remove(Integer key) throws RepositoryException {
+        if (contains(key)) {
+            dao.delete(key);
         }
     }
 
     @Override
-    public StudentDto get(StudentDto item) throws IOException {
-        return dao.get(item);
-    }
-
-    @Override
-    public List<StudentDto> getAll() throws IOException {
+    public List<StudentDto> getAll() throws RepositoryException {
         return dao.getAll();
     }
 
     @Override
-    public boolean contains(StudentDto item) throws IOException {
-        return (dao.get(item) != null);
+    public boolean contains(Integer key) throws RepositoryException {
+        return (dao.get(key) != null);
+
+    }
+
+    @Override
+    public StudentDto get(Integer key) throws RepositoryException {
+        return dao.get(key);
     }
 }
-
