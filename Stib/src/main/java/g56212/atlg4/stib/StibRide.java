@@ -1,6 +1,5 @@
 package g56212.atlg4.stib;
 
-import g56212.atlg4.stib.config.ConfigManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
